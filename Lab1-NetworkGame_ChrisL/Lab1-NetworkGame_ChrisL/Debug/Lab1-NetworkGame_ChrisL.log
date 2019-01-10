@@ -1,6 +1,2 @@
-﻿  Game.cpp
-  Main.cpp
-z:\season 4\game311-w19-201-5114-c network programming\lab1-networkgame_chrisl\lab1-networkgame_chrisl\main.cpp(15): warning C4930: 'Game PlayerTwo(void)': prototyped function not called (was a variable definition intended?)
-  Player.cpp
-  Generating Code...
-  Lab1-NetworkGame_ChrisL.vcxproj -> Z:\Season 4\GAME311-W19-201-5114-C Network Programming\Lab1-NetworkGame_ChrisL\Debug\Lab1-NetworkGame_ChrisL.exe
+﻿  Main.cpp
+  Lab1-NetworkGame_ChrisL.vcxproj -> C:\Users\clandry\Documents\cmd\Lab1-NetworkGame_ChrisL\Debug\Lab1-NetworkGame_ChrisL.exe

@@ -1,16 +1,21 @@
 #pragma once
 #include <string>
+
 using namespace std;
 
 class Player
 {
 private:
-	string NewName;
+	string PlayerName;
 public:
 	Player();
 	~Player();
+	Player(string NewName) : PlayerName(NewName) {}
 
-	Player(string Name) : NewName(Name){}
+	void setNames(string Name)
+	{
+		Name = PlayerName;
+	}
 
 	int iPiece[2];
 	int iWins;

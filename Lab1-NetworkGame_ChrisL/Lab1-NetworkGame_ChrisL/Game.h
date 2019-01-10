@@ -12,6 +12,8 @@ private:
 	Player* LocalPlayerOne;
 	Player* LocalPlayerTwo;
 
+
+
 public:
 	Game();
 	~Game();
@@ -21,6 +23,10 @@ public:
 		PlayerOne = LocalPlayerOne;
 		PlayerTwo = LocalPlayerTwo;
 	}
+	void startGame();
+	void checkForWinner();
+	int processTurn();
+	void displayBoard();
 
 
 };
