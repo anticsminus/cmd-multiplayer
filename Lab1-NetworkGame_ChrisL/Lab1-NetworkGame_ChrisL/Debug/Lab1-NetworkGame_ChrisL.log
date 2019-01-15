@@ -1,2 +1,3 @@
-﻿  Main.cpp
-  Lab1-NetworkGame_ChrisL.vcxproj -> C:\Users\clandry\Documents\cmd\Lab1-NetworkGame_ChrisL\Debug\Lab1-NetworkGame_ChrisL.exe
+﻿  Game.cpp
+z:\semester 4\game311\lab1-networkgame_chrisl\lab1-networkgame_chrisl\game.cpp(33): warning C4101: 'board': unreferenced local variable
+  Lab1-NetworkGame_ChrisL.vcxproj -> Z:\Semester 4\GAME311\Lab1-NetworkGame_ChrisL\Lab1-NetworkGame_ChrisL\Debug\Lab1-NetworkGame_ChrisL.exe

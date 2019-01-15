@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 class Player
 {
 private:
@@ -16,8 +17,8 @@ public:
 	{
 		Name = PlayerName;
 	}
-
-	int iPiece[2];
+	string getNames() { return PlayerName; }
+	int iPiece = 1;
 	int iWins;
 	int iGamesPlayed;
 

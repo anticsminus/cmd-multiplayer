@@ -11,7 +11,7 @@ string name;
 Player* p1;
 Player* p2;
 
-Game game(p1, p2);
+
 
 using namespace std;
 
@@ -24,14 +24,19 @@ void initNames() //function for initializing the names
 
 	//rinse & repeat for player 2
 	cout << "\n\nPlease enter your name for player two \n";
-	cin >> name; 
+	cin >> name;
 	p2 = new Player(name);
+	system("cls");
+	Game game(p1, p2);
+	game.displayBoard();
+
+
 }
 
 int main()
 {
-	initNames();
-	//game.displayBoard();
+initNames();
+
 
 	system("PAUSE");
 	return 0;
