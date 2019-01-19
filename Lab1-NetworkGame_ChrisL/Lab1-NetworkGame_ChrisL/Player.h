@@ -21,7 +21,7 @@ public:
 	int iPiece = 1;
 	int iWins;
 	int iGamesPlayed;
-
+	int playerinput;
 	bool bHasMoved;
 	bool bHasAttacked;
 	bool bIsActivePiece;

@@ -1,9 +1,4 @@
-/*========================*\
-* Lab 1
-* Name: Chris Landry & Mason Lee
-* Date: January 8th, 2019.
-*
-*=========================*/
+
 
 #include <iostream>
 #include "Game.h"
@@ -28,14 +23,14 @@ void initNames() //function for initializing the names
 	p2 = new Player(name);
 	system("cls");
 	Game game(p1, p2);
-	game.displayBoard();
+	game.displayBoard(p1);
 
 
 }
 
 int main()
 {
-initNames();
+	initNames();
 
 
 	system("PAUSE");

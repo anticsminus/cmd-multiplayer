@@ -17,15 +17,17 @@ void Game::startGame()
 	LocalPlayerTwo->bIsActivePiece = false;
 }
 
-int Game::processTurn()
+int Game::processTurn(Player* WhatPlayer)
 {
 	cout << "\n\nPlease choose one of the following actions" << endl;
-	cin >> playerinput;
-	if (playerinput == ATTACK)
-	{
+	cout << "[0] Choose Attack Coordinates\n[1]End Turn" << endl;
 
+	if (WhatPlayer->playerinput == ATTACK)
+	{
+		int col = enterColPosition();
+		int row = enterRowPosition();
 	}
-	if (playerinput == ENDTURN)
+	if (WhatPlayer->playerinput == ENDTURN)
 	{
 
 	}
@@ -33,19 +35,19 @@ int Game::processTurn()
 
 }
 
-int enterRowPosition()
+int Game::enterRowPosition()
 {
 	int row = 0;
 	do
 	{
-		cout << "Enter row: ";
+		cout << "Enter row (from 0-5): ";
 		cin >> row;
 	} while (row < 0 || row >= 5);
 
 	return row;
 }
 
-int enterColPosition()
+int Game::enterColPosition()
 {
 	char col;
 		cout << "Enter column (A,B,C,D,E): ";
@@ -56,10 +58,9 @@ int enterColPosition()
 }
 
 
-void Game::displayBoard()
+void Game::displayBoard(Player* WhatPlayer)
 {
-	int board[5][5];
-	cout << "It is now " << LocalPlayerOne->getNames() << "'s turn \n" << endl;
+	cout << "It is now " << WhatPlayer->getNames() << "'s turn \n" << endl;
 	cout << "    A    B    C    D    E\n\n";
 
 	for (int row = 0; row < 5; row++)
@@ -84,7 +85,7 @@ void Game::displayBoard()
 
 	cout << "\n\n" << LocalPlayerOne->getNames() << "\t	" << LocalPlayerTwo->getNames() << endl;
 	cout << "SMALL SHIPS: " << LocalPlayerOne->iPiece << "\tSMALL SHIPS: " << LocalPlayerTwo->iPiece << endl;
-	processTurn();
+	if(LocalPlayerOne->playerinput < LocalPlayerTwo->playerinput ? processTurn(LocalPlayerOne) : processTurn(LocalPlayerTwo));
 }
 
 void Game::checkForWinner()

@@ -48,8 +48,10 @@ public:
 
 	void startGame();
 	void checkForWinner();
-	int processTurn();
-	void displayBoard();
-	int playerinput;
+	int processTurn(Player* WhatPlayer);
+	void displayBoard(Player* WhatPlayer);
+
+	int enterRowPosition();
+	int enterColPosition();
 };
 
