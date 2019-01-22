@@ -20,11 +20,12 @@ public:
 	string getNames() { return PlayerName; }
 	int iPiece = 1;
 	int iWins;
+	int iAmountOfTurns = 0;
 	int iGamesPlayed;
-	int playerinput;
+	int playerinput = 0;
 	bool bHasMoved;
-	bool bHasAttacked;
-	bool bIsActivePiece;
+	bool bHasAttacked = false;
+	bool bIsActivePiece = true;
 
 };
 

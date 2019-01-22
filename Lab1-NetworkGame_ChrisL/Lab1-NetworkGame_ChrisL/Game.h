@@ -42,9 +42,16 @@ public:
 	{
 		LocalPlayerOne = PlayerOne;
 		LocalPlayerTwo = PlayerTwo;
+		for (int row = 0; row < 5; row++)
+		{
+			for (int col = 0; col < 5; col++)
+			{
+				board[col][row] = HitCheck::WATER;
+			}
+		}
 	}
 
-	int board[5][5];
+	char board[5][5];
 
 	void startGame();
 	void checkForWinner();

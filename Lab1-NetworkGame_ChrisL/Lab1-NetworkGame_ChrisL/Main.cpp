@@ -12,6 +12,7 @@ using namespace std;
 
 void initNames() //function for initializing the names
 {
+	&Game::startGame;
 	cout << "Welcome to Battleships! A local multiplayer game between two players\n\n" << endl;
 	cout << "\n\nPlease enter your name for player one \n";
 	cin >> name; //take input from console for name 

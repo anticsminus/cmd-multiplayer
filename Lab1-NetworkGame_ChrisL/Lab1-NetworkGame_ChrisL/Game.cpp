@@ -1,4 +1,5 @@
 #include "Game.h"
+void displayBoard(Player* WhatPlayer);
 
 enum column
 {
@@ -21,18 +22,48 @@ int Game::processTurn(Player* WhatPlayer)
 {
 	cout << "\n\nPlease choose one of the following actions" << endl;
 	cout << "[0] Choose Attack Coordinates\n[1]End Turn" << endl;
+	cin >> WhatPlayer->playerinput;
 
+	WhatPlayer->iAmountOfTurns += 1;
 	if (WhatPlayer->playerinput == ATTACK)
 	{
-		int col = enterColPosition();
-		int row = enterRowPosition();
+		if (WhatPlayer->bHasAttacked == false)
+		{
+			int col = enterColPosition();
+			int row = enterRowPosition();
+			WhatPlayer->bHasAttacked = true;
+
+			// checkl to see if piece is at that location
+			// if so // mark that peice as hit once
+			// update the board at that location to show hitcheck::HIT
+			// else it's a miss but still update board
+			if (board[col][row] == 0)
+			{
+				board[col][row] = HitCheck::MISS;
+			}
+			if (board[col][row] == 1)
+			{
+				board[col][row] = HitCheck::HIT;
+			}
+			displayBoard(WhatPlayer);
+
+		}
+		else
+		{
+			cout << "You have already attacked, please choose one of the following options\n" << endl;
+			cout << "[1]End Turn" << endl;
+			cin >> WhatPlayer->playerinput;
+		}
 	}
+
 	if (WhatPlayer->playerinput == ENDTURN)
 	{
+		system("cls");
 
+		LocalPlayerOne->iAmountOfTurns < LocalPlayerTwo->iAmountOfTurns ? displayBoard(LocalPlayerOne) : displayBoard(LocalPlayerTwo);
 	}
-	return 0;
 
+	return 0;
 }
 
 int Game::enterRowPosition()
@@ -42,6 +73,11 @@ int Game::enterRowPosition()
 	{
 		cout << "Enter row (from 0-5): ";
 		cin >> row;
+		row - 1;
+		if(row < 0 || row > 5)
+		{ 
+			enterRowPosition();
+		}
 	} while (row < 0 || row >= 5);
 
 	return row;
@@ -50,16 +86,40 @@ int Game::enterRowPosition()
 int Game::enterColPosition()
 {
 	char col;
+	int column = 0;
 		cout << "Enter column (A,B,C,D,E): ";
-		char A = 1;
-
 		cin >> col;
-	return col;
+		if (col != 'A' && col != 'B' && col != 'C' && col != 'D' && col != 'E' )
+		{
+			enterColPosition();
+		}
+		if (col = 'A')
+		{
+			column = 4;
+		}
+		if (col = 'B')
+		{
+			column = 3;
+		}
+		if (col = 'C')
+		{
+			column = 2;
+		}
+		if (col = 'D')
+		{
+			column = 1;
+		}
+		if (col = 'E')
+		{
+			column = 0;
+		}
+	return column;
 }
 
 
 void Game::displayBoard(Player* WhatPlayer)
 {
+	WhatPlayer->bHasAttacked = false;
 	cout << "It is now " << WhatPlayer->getNames() << "'s turn \n" << endl;
 	cout << "    A    B    C    D    E\n\n";
 
@@ -68,24 +128,18 @@ void Game::displayBoard(Player* WhatPlayer)
 		cout << row + 1;
 		for (int col = 0; col < 5; col++)
 		{
+			//
 			cout << " ";
 
-			// print data here or -
-			if (/*check something*/ 0)
-			{
-				// cout x or s or whatever
-			}
-			else
-			{
-				cout << "  ~ ";
-			}
+			cout << "  " << board[col][row] << " ";
+			
 		}
 		cout << endl;
 	}
 
 	cout << "\n\n" << LocalPlayerOne->getNames() << "\t	" << LocalPlayerTwo->getNames() << endl;
 	cout << "SMALL SHIPS: " << LocalPlayerOne->iPiece << "\tSMALL SHIPS: " << LocalPlayerTwo->iPiece << endl;
-	if(LocalPlayerOne->playerinput < LocalPlayerTwo->playerinput ? processTurn(LocalPlayerOne) : processTurn(LocalPlayerTwo));
+	LocalPlayerOne->iAmountOfTurns < LocalPlayerTwo->iAmountOfTurns ? processTurn(LocalPlayerOne) : processTurn(LocalPlayerTwo);
 }
 
 void Game::checkForWinner()
@@ -103,6 +157,8 @@ void Game::checkForWinner()
 
 Game::Game()
 {
+
+
 }
 
 
@@ -110,4 +166,6 @@ Game::~Game()
 {
 }
 
-
+void displayBoard(Player * WhatPlayer)
+{
+}
