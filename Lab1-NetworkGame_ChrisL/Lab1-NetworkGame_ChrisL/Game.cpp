@@ -31,19 +31,20 @@ int Game::processTurn(Player* WhatPlayer)
 		{
 			int col = enterColPosition();
 			int row = enterRowPosition();
+			col - 1;
 			WhatPlayer->bHasAttacked = true;
-
+			board[col][row] = HitCheck::HIT;
 			// checkl to see if piece is at that location
 			// if so // mark that peice as hit once
 			// update the board at that location to show hitcheck::HIT
 			// else it's a miss but still update board
-			if (board[col][row] == 0)
+			if (board[row][col] == 0)
 			{
-				board[col][row] = HitCheck::MISS;
+				board[row][col] = HitCheck::MISS;
 			}
-			if (board[col][row] == 1)
+			if (board[row][col] == 1)
 			{
-				board[col][row] = HitCheck::HIT;
+				board[row][col] = HitCheck::HIT;
 			}
 			displayBoard(WhatPlayer);
 
@@ -59,7 +60,7 @@ int Game::processTurn(Player* WhatPlayer)
 	if (WhatPlayer->playerinput == ENDTURN)
 	{
 		system("cls");
-
+		WhatPlayer->bHasAttacked == false;
 		LocalPlayerOne->iAmountOfTurns < LocalPlayerTwo->iAmountOfTurns ? displayBoard(LocalPlayerOne) : displayBoard(LocalPlayerTwo);
 	}
 
@@ -119,7 +120,6 @@ int Game::enterColPosition()
 
 void Game::displayBoard(Player* WhatPlayer)
 {
-	WhatPlayer->bHasAttacked = false;
 	cout << "It is now " << WhatPlayer->getNames() << "'s turn \n" << endl;
 	cout << "    A    B    C    D    E\n\n";
 
@@ -131,7 +131,7 @@ void Game::displayBoard(Player* WhatPlayer)
 			//
 			cout << " ";
 
-			cout << "  " << board[col][row] << " ";
+			cout << "  " << board[row][col] << " ";
 			
 		}
 		cout << endl;

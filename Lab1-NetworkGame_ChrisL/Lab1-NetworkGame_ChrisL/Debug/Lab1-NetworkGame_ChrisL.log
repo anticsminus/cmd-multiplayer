@@ -1,3 +1,5 @@
 ﻿  Game.cpp
-c:\users\clandry\documents\cmd\lab1-networkgame_chrisl\lab1-networkgame_chrisl\game.cpp(78): warning C4552: '-': result of expression not used
+c:\users\clandry\documents\cmd\lab1-networkgame_chrisl\lab1-networkgame_chrisl\game.cpp(34): warning C4552: '-': result of expression not used
+c:\users\clandry\documents\cmd\lab1-networkgame_chrisl\lab1-networkgame_chrisl\game.cpp(63): warning C4553: '==': result of expression not used; did you intend '='?
+c:\users\clandry\documents\cmd\lab1-networkgame_chrisl\lab1-networkgame_chrisl\game.cpp(77): warning C4552: '-': result of expression not used
   Lab1-NetworkGame_ChrisL.vcxproj -> C:\Users\clandry\Documents\cmd\Lab1-NetworkGame_ChrisL\Debug\Lab1-NetworkGame_ChrisL.exe
