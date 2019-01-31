@@ -18,12 +18,13 @@ public:
 		Name = PlayerName;
 	}
 	string getNames() { return PlayerName; }
-	int iPiece = 1;
+	int iPiece = 4;
+	int iPlacedPieces = 0;
 	int iWins;
 	int iAmountOfTurns = 0;
 	int iGamesPlayed;
 	int playerinput = 0;
-	bool bHasMoved;
+	bool bcompletedSetup = false;
 	bool bHasAttacked = false;
 	bool bIsActivePiece = true;
 

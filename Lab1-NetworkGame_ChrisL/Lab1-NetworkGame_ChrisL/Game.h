@@ -10,7 +10,8 @@ using namespace std;
 enum battle
 {
 		ATTACK,
-		ENDTURN
+		ENDTURN,
+		PLACESHIPS
 };
 
 enum SlotNotation
@@ -46,18 +47,21 @@ public:
 		{
 			for (int col = 0; col < 5; col++)
 			{
-				board[col][row] = HitCheck::WATER;
+				for (int i = 0; i < 2; i++)
+				{
+					board[col][row][i] = HitCheck::WATER;
+				}
 			}
 		}
 	}
+	char board[5][5][1];
 
-	char board[5][5];
 
 	void startGame();
+	int displayTurn(Player * WhatPLayer);
 	void checkForWinner();
 	int processTurn(Player* WhatPlayer);
 	void displayBoard(Player* WhatPlayer);
-
 	int enterRowPosition();
 	int enterColPosition();
 };

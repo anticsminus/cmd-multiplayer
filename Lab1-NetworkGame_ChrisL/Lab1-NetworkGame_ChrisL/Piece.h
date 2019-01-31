@@ -9,6 +9,8 @@ class Piece
 public:
 	vec2 position;
 	Piece();
+
+
 	~Piece();
 };
 
