@@ -1,4 +1,9 @@
 ﻿  Game.cpp
   Main.cpp
+  Piece.cpp
+  Player.cpp
   Generating Code...
-  Lab1-NetworkGame_ChrisL.vcxproj -> E:\CMD-Multiplayer\Lab1-NetworkGame_ChrisL\Lab1-NetworkGame_ChrisL\Debug\Lab1-NetworkGame_ChrisL.exe
+e:\college\cmd-multiplayer\lab1-networkgame_chrisl\lab1-networkgame_chrisl\game.cpp(233): warning C4715: 'Game::SetGrid': not all control paths return a value
+e:\college\cmd-multiplayer\lab1-networkgame_chrisl\lab1-networkgame_chrisl\game.cpp(187): warning C4715: 'Game::GetGrid': not all control paths return a value
+  Lab1-NetworkGame_ChrisL.vcxproj -> E:\College\CMD-Multiplayer\Lab1-NetworkGame_ChrisL\Lab1-NetworkGame_ChrisL\Debug\Lab1-NetworkGame_ChrisL.exe
+  Lab1-NetworkGame_ChrisL.vcxproj -> E:\College\CMD-Multiplayer\Lab1-NetworkGame_ChrisL\Lab1-NetworkGame_ChrisL\Debug\Lab1-NetworkGame_ChrisL.pdb (Partial -> Full PDB)

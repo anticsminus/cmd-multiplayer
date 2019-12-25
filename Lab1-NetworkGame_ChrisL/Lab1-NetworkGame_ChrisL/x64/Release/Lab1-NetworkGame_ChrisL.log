@@ -1,0 +1,10 @@
+﻿  Game.cpp
+  Main.cpp
+  Piece.cpp
+  Player.cpp
+  Generating code
+e:\college\cmd-multiplayer\lab1-networkgame_chrisl\lab1-networkgame_chrisl\game.cpp(233): warning C4715: 'Game::SetGrid': not all control paths return a value
+e:\college\cmd-multiplayer\lab1-networkgame_chrisl\lab1-networkgame_chrisl\game.cpp(187): warning C4715: 'Game::GetGrid': not all control paths return a value
+  All 147 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Lab1-NetworkGame_ChrisL.vcxproj -> E:\College\CMD-Multiplayer\Lab1-NetworkGame_ChrisL\Lab1-NetworkGame_ChrisL\x64\Release\Lab1-NetworkGame_ChrisL.exe

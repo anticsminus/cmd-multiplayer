@@ -1,16 +1,24 @@
 #pragma once
-struct vec2 {
-	int x, y = 0;
-};
+
+#include <stack>
+
+using namespace std;
 
 
 class Piece
 {
+private: 
+
+
 public:
-	vec2 position;
+
+
+
+
 	Piece();
-
-
 	~Piece();
+	int x;
+		int y;
+
 };
 

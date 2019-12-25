@@ -4,6 +4,7 @@
 using namespace std;
 
 
+
 class Player
 {
 private:
@@ -20,13 +21,14 @@ public:
 	string getNames() { return PlayerName; }
 	int iPiece = 4;
 	int iPlacedPieces = 0;
-	int iWins;
+	int iWins = 0;
 	int iAmountOfTurns = 0;
-	int iGamesPlayed;
+	int iGamesPlayed = 0;
 	int playerinput = 0;
 	bool bcompletedSetup = false;
 	bool bHasAttacked = false;
 	bool bIsActivePiece = true;
+	bool bisAI = false;
 
 };
 

@@ -1,0 +1,9 @@
+﻿  Main.cpp
+E:\College\CMD-Multiplayer\Lab1-NetworkGame_ChrisL\Lab1-NetworkGame_ChrisL\Main.cpp(24,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\College\CMD-Multiplayer\Lab1-NetworkGame_ChrisL\Lab1-NetworkGame_ChrisL\Main.cpp(107,23): warning C4305:  'argument': truncation from 'char' to 'bool'
+  Generating code
+  2 of 141 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Lab1-NetworkGame_ChrisL.vcxproj -> E:\College\CMD-Multiplayer\Lab1-NetworkGame_ChrisL\Lab1-NetworkGame_ChrisL\Release\Lab1-NetworkGame_ChrisL.exe
