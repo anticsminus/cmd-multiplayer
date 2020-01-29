@@ -1,0 +1,202 @@
+// Example program
+#include <iostream>
+#include <string>
+#include <limits>
+#include <time.h>
+#include <cstdlib>
+#include <thread>
+#include <chrono>
+
+using namespace std;
+
+namespace sprites {
+	const char UNNOCUPIED = ' ';
+	const char CROSSES = 'X';
+	const char NAUGHTS = 'O';
+	const char VDIVIDERS = '|';
+	const char HDIVIDERS = '-';
+}
+
+/////////////////////////////////////////////
+//////////      PLAYER  CLASS      //////////
+/////////////////////////////////////////////
+
+class Player
+{
+private:
+	string PlayerName;
+	int iAmountOfWins;
+	
+public:
+	Player();
+	~Player();
+	Player(string NewName) : PlayerName(NewName) {}
+
+	void setName(string Name) {	Name = PlayerName; }
+	string getName() { return PlayerName; }
+	
+	void addWin() {	iAmountOfWins++; }
+	int getWin() { return iAmountOfWins; }
+	
+protected:
+};
+
+Player * playerOne; 
+Player * playerTwo;
+
+/////////////////////////////////////////////
+//////////       GAME   CLASS      //////////
+/////////////////////////////////////////////
+
+class Game
+{
+private:
+	Player* LocalPlayerOne;
+	Player* LocalPlayerTwo;
+    bool bGameRunning;
+	
+public:
+    Game();
+    ~Game();
+    Game(Player* playerOne, Player* playerTwo) 
+	{
+        LocalPlayerOne = playerOne;
+		LocalPlayerTwo = playerTwo;
+		for (int row = 0; row < 4; row++)
+		{
+			for (int col = 0; col < 4; col++)
+			{
+			    if(col % 2 == 0)
+					board[col][row] = sprites::UNNOCUPIED;
+				if(col % 4 != 0)
+					board[col][row] = sprites::HDIVIDERS;
+			}
+		}
+    }
+    char board[5][5];
+	char board2[5][5];
+	
+    bool boardSetup();
+    bool isOccupied();
+    void displayBoard();
+    void processTurn();
+protected:
+
+};
+
+bool Game::isOccupied()
+{
+    
+}
+
+void Game::displayBoard()
+{
+    		cout << "   A B C\n";
+
+		for (int row = 0; row < 3; row++)
+		{
+			cout << row + 1;
+			for (int col = 0; col < 4; col++)
+			{
+    					cout << "" << board[col][row] << " ";
+			}
+			//cout << "| ";
+		    cout << endl;
+		}
+
+}
+
+void Game::processTurn()
+{
+    cout << "Please process your turn " << endl;
+}
+
+/////////////////////////////////////////////
+//////////           MAIN          //////////
+/////////////////////////////////////////////
+
+
+void clsIgnore(bool withSleep, int time)
+{
+    if(withSleep == true)
+    {
+            this_thread::sleep_for(chrono::milliseconds(time));
+    }
+    cin.clear();
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	system("clear");    
+}
+
+bool init()
+{
+      cout << "Hello and welcome to Chris Landry's command line game!\nWhat is your name? ";
+  
+  string name[2];
+  
+  cin >> name[0]; 
+  
+  playerOne = new Player(name[0]);
+  
+  cout << "Hello, " << playerOne->getName() << "!\nAre you playing with someone or by yourself?\n[1] - Solo\n[2] - VS Mode\n";
+  int soloDuo; 
+  cin >> soloDuo;
+
+  if(cin)
+  {
+      switch(soloDuo)
+      {
+          case 1:
+            cout << "All alone are ya matey? Well for your case we have an advanced AI who you can take on.\n";
+            //switch / rand statement for AI Names 
+            
+            	              playerTwo = new Player("big bots");
+          break;
+          
+          case 2:
+            cout << "Who dares to challenge " << playerOne->getName() << " in VS mode? State your name!\n";
+              cin >> name[1]; 
+    
+              playerTwo = new Player(name[1]);
+
+          break;
+      }
+  }
+  	if (!cin)
+	{
+		clsIgnore(true, 2000);
+		init();
+	}
+
+  cout << playerOne->getName() << " VS " << playerTwo->getName() << " what an interesting matchup... Who will win?\n";
+  return true;
+}
+
+void winnerWinnerChickenDinner()
+{
+    
+    cout << "Player two " << playerOne->getName() << " has: " << playerOne->getWin() << " wins " << endl;
+    cout << "Player two " << playerTwo->getName() << " has: " << playerTwo->getWin() << " wins " << endl;
+}
+
+int main()
+{
+    bool gameRunning =  init();
+    clsIgnore(true, 5000);
+    Game* game = new Game(playerOne, playerTwo); 
+    //while(gameRunning == true)
+    //{
+            game->displayBoard();
+            
+    //}
+
+    //display board
+    //check winner after game 
+	//winnerWinnerChickenDinner();
+	return 0;
+	
+}
+ 
+ 
+ 
+ 
+ 
