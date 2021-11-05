@@ -34,8 +34,10 @@ void Game::startGame(bool firstRun)
 
 	//}
 	//reset player two
-	p1pieces[colTracker[1][0]].x = 0;
-	p1pieces[rowTracker[1][0]].y = 0;
+	p1pieces[colTracker[0][0]].x = 0;
+	p1pieces[rowTracker[0][0]].y = 0;
+	p2pieces[colTracker[1][0]].x = 0;
+	p2pieces[rowTracker[1][0]].y = 0;
 	LocalPlayerOne->bHasAttacked = false;
 	LocalPlayerOne->bIsActivePiece = false;
 	LocalPlayerOne->bcompletedSetup = false;
@@ -67,14 +69,14 @@ int Game::enterRowPosition()
 		cin >> row;
 		if (cin)
 		{
-			if (row > 1 || row < 6)
+			if (row > 0 && row < 6)
 			{
 				return row - 1;
 			}
 		}
 		else 
 		{
-			//enterRowPosition();
+			enterRowPosition();
 		}
 	//} while (row < 1 || row >= 6);
 
@@ -297,7 +299,7 @@ bool Game::setupBoard(Player* &WhatPlayer)
 				isOccupiedByYourOwnShip = SetGrid(col, row, LocalPlayerOne);
 				if (isOccupiedByYourOwnShip == false)
 				{
-					colTracker[1][i] = col; rowTracker[1][i] = row;
+					colTracker[0][i] = col; rowTracker[0][i] = row;
 					p1pieces[LocalPlayerOne->iPlacedPieces].x = col;
 					p1pieces[LocalPlayerOne->iPlacedPieces].y = row;
 					i++; 
@@ -330,7 +332,7 @@ bool Game::setupBoard(Player* &WhatPlayer)
 				isOccupiedByYourOwnShip = SetGrid(col, row, LocalPlayerTwo);
 				if (isOccupiedByYourOwnShip == false)
 				{
-					colTracker[2][i] = col; rowTracker[2][i] = row;
+					colTracker[1][i] = col; rowTracker[1][i] = row;
 					p2pieces[LocalPlayerTwo->iPlacedPieces].x = col;
 					p2pieces[LocalPlayerTwo->iPlacedPieces].y = row;
 					i++; 
@@ -346,8 +348,8 @@ bool Game::setupBoard(Player* &WhatPlayer)
 					setupBoard(WhatPlayer);
 				}
 			}
-			LocalPlayerOne->iAmountOfTurns = 0;
-			LocalPlayerTwo->iAmountOfTurns = 1;
+			//LocalPlayerOne->iAmountOfTurns = 0;
+			//LocalPlayerTwo->iAmountOfTurns = 1;
 
 		}
 	}
